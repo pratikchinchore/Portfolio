@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pratik Chinchore — Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Particle canvas -->
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <!-- Header / Navbar -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Pratik</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-3"><a class="btn btn-ghost btn-resume" href="Img/Pratik-Chinchore-Resume.pdf" download><i class="fa fa-download me-2"></i>Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: Intro -->
+          <div class="col-lg-6">
+            <div class="intro" id="heroIntro">
+              <div class="eyebrow">Web Developer / Full-stack Developer</div>
+              <h1 class="hero-title">Hi — I'm <span>Pratik Chinchore</span></h1>
+              <p class="lead hero-desc">Results-driven Software Developer with over 3 years of experience specializing in designing and deploying dynamic web applications. Expertise spans both front-end and back-end development, adept at crafting intuitive user interfaces and scalable code solutions.</p>
+
+              <div class="typed-wrap">
+                <span id="typed-text" class="typed-text"></span>
+              </div>
+
+              <div class="mt-4 d-flex flex-wrap gap-3">
+                <a href="#projects" class="btn btn-primary btn-lg btn-glow">View Projects</a>
+                <a href="Img/Pratik-Chinchore-Resume.pdf" class="btn btn-outline btn-lg" download><i class="fa fa-download me-2"></i>Resume</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Featured panel -->
+          <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+            <div class="feature-card tilt" data-tilt data-tilt-max="8" id="featureCard">
+              <div class="feature-inner">
+                <h5 class="feature-title">Featured Work</h5>
+                <p class="muted text-center">Built responsive websites, survey forms, landing pages, and in-house tools with modern, user-focused design.</p>
+                <div class="mt-3 text-center">
+                  <a class="btn btn-outline btn-sm" href="#experience">Explore</a>
+                </div>
+              </div>
+              <div class="accent-square" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5" data-aos="fade-up">
+            <div class="card glass card-profile p-4 text-center">
+              <img src="Img/profile.jpeg" alt="profile" class="profile-img mb-3" width="120" height="120" loading="lazy" />
+              <h4 class="fw-bold mb-1 orbitron">Pratik Chinchore</h4>
+              <p class="muted mb-3">Frontend / Full-stack Developer</p>
+              <p class="muted small mb-3">Dynamic Web Developer specializing in React.js, Node.js, PHP, and Full Stack Development with hands-on experience in building responsive web applications, optimizing performance, and enhancing user engagement through innovative tools and features.</p>
+
+              <div class="d-flex justify-content-center gap-2">
+                <a class="btn btn-ghost btn-sm" href="#contact">Hire Me</a>
+                <a class="btn btn-primary btn-sm" href="#projects">See Work</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="card glass p-4">
+                  <h6 class="orbitron accent-cyan">Skill Set</h6>
+                  <div class="d-flex flex-wrap gap-4 mt-3">
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="50" title="React JS" /><p class="small mt-1">React</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="50" title="Node.js" /><p class="small mt-1">Node.js</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="50" title="PHP" /><p class="small mt-1">PHP</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" title="JavaScript" /><p class="small mt-1">JavaScript</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="50" title="HTML5" /><p class="small mt-1">HTML5</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="50" title="CSS3" /><p class="small mt-1">CSS3</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="50" title="Bootstrap" /><p class="small mt-1">Bootstrap</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" width="50" title="jQuery" /><p class="small mt-1">jQuery</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter" width="50" title="CodeIgniter" /><p class="small mt-1">CodeIgniter</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="50" title="Laravel" /><p class="small mt-1">Laravel</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="50" title="MySQL" /><p class="small mt-1">MySQL</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="card glass p-4">
+                  <h6 class="orbitron accent-magenta">Tools I Use</h6>
+                  <div class="d-flex flex-wrap gap-4 mt-3">
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="45" title="VS Code" /><p class="small mt-1">VSCode</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="45" title="Git" /><p class="small mt-1">Git</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="45" title="GitHub" /><p class="small mt-1">GitHub</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" width="45" title="npm" /><p class="small mt-1">npm</p></div>
+                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome DevTools" width="45" title="Chrome DevTools" /><p class="small mt-1">DevTools</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /container -->
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h3 class="orbitron accent-cyan">Work Experience</h3>
+        <div class="timeline mt-4">
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+            <h5>Web Developer — On Direct Marketing Services LLP, Pune</h5>
+            <small class="muted">March 2023 — Present</small>
+            <p class="muted mb-2">Developed and maintained scalable full-stack web applications using React.js, Node.js, and MySQL. Collaborated with cross-functional teams to optimize UI and backend workflows.</p>
+            <ul class="muted small">
+              <li>Developed and maintained animated landing pages for enhanced user engagement.</li>
+              <li>Designed and implemented dynamic survey forms for data collection.</li>
+              <li>Created an email validator tool to ensure email accuracy.</li>
+              <li>Developed and managed an admin panel for streamlined tasks.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <h5>Software Developer — SRV Media Pvt.Ltd, Pune</h5>
+            <small class="muted">Feb 2022 — Nov 2022</small>
+            <p class="muted mb-2">Worked on dynamic web interfaces using PHP, Bootstrap. Enhanced website accessibility and responsiveness across devices.</p>
+            <ul class="muted small">
+              <li>Integrated Google Captcha for enhanced form security.</li>
+              <li>Configured SMTP for reliable email sending.</li>
+              <li>Developed responsive web pages using Bootstrap.</li>
+              <li>Implemented form validation for data integrity.</li>
+              <li>Improved website SEO with on-page techniques.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h3 class="orbitron accent-magenta">Selected Projects</h3>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
+            <button class="btn btn-category active" data-category="websites">Websites</button>
+            <button class="btn btn-category" data-category="landing">Landing Pages</button>
+            <button class="btn btn-category" data-category="survey">Survey Forms</button>
+            <button class="btn btn-category" data-category="tools">In-house Tools</button>
+          </div>
+        </div>
+
+        <div id="projects-carousel" class="position-relative">
+          <!-- Websites -->
+          <div class="project-carousel" id="carousel-websites">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Website 1" />
+                    <div class="project-content">
+                      <h5>Corporate Website</h5>
+                      <p>Responsive business website with CMS integration and SEO optimization.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Website 2" />
+                    <div class="project-content">
+                      <h5>Portfolio Website</h5>
+                      <p>Modern personal portfolio with smooth animations and theme switcher.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Website 3" />
+                    <div class="project-content">
+                      <h5>Startup Website</h5>
+                      <p>Clean one-page site for a startup with testimonials and call-to-action.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Website 4" />
+                    <div class="project-content">
+                      <h5>Agency Website</h5>
+                      <p>Creative site for a digital agency with video background and animations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <!-- Landing -->
+          <div class="project-carousel d-none" id="carousel-landing">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Landing 1" />
+                    <div class="project-content">
+                      <h5>Product Launch Page</h5>
+                      <p>High-conversion landing page for a SaaS product with CTA and video hero.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Landing 2" />
+                    <div class="project-content">
+                      <h5>Event Registration</h5>
+                      <p>Landing page for a tech conference with countdown and registration form.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <!-- Survey -->
+          <div class="project-carousel d-none" id="carousel-survey">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Survey 1" />
+                    <div class="project-content">
+                      <h5>Customer Feedback</h5>
+                      <p>Dynamic survey form with conditional logic and analytics dashboard.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Survey 2" />
+                    <div class="project-content">
+                      <h5>Employee Engagement</h5>
+                      <p>Multi-step form with smooth transitions and summary insights.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="project-carousel d-none" id="carousel-tools">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Tool 1" />
+                    <div class="project-content">
+                      <h5>Task Tracker</h5>
+                      <p>Internal productivity tracker with live updates and notifications.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card tilt" data-tilt data-tilt-max="6">
+                    <img src="https://via.placeholder.com/400x250" alt="Tool 2" />
+                    <div class="project-content">
+                      <h5>Resource Manager</h5>
+                      <p>Tool for tracking team utilization and managing internal projects.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-lg-7">
+            <h3 class="orbitron accent-coral">Education</h3>
+            <div class="timeline">
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+                <h6>Master of Computer Application (MCA)</h6>
+                <small class="muted">2020 — 2022</small>
+                <p class="muted">Modern College Shivaji Nagar (Autonomous), Pune</p>
+              </div>
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <h6>Bachelor of Computer Science (BCS)</h6>
+                <small class="muted">2017 — 2020</small>
+                <p class="muted">KTHM College, Nashik</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left">
+            <h3 class="orbitron accent-coral">Certifications</h3>
+            <div class="timeline mt-4">
+              <div class="timeline-item" data-aos="fade-left" data-aos-delay="50">
+                <h6>MERN Stack Development</h6>
+                <small class="muted">Issued by: Seven Mentor Pvt Ltd</small>
+              </div>
+              <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                <h6>React Js Certification</h6>
+                <small class="muted">Issued by: Dot Net Tricks</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h3 class="orbitron accent-magenta">Let's build something</h3>
+            <p class="muted">Feel free to reach out for collaborations, freelance work, or just to say hi.</p>
+            <div class="mt-3">
+              <p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:pratikc29499@gmail.com">pratikc29499@gmail.com</a></p>
+              <p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 7507160134</p>
+              <p>
+                <a href="https://github.com/pratikchinchore" class="me-2"><i class="fa-brands fa-github fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/pratik-chinchore-73142a215/" class="me-2"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>© <span id="year"></span> Pratik Chinchore</div>
+        <div class="socials">
+          <a href="https://github.com/pratikchinchore" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/pratik-chinchore-73142a215/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- VanillaTilt -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
