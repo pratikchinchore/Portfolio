@@ -5,83 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pratik Chinchore — Portfolio</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
-    <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" tabindex="0">
+    <!-- RETRO SHAPE LAYERS -->
+    <div class="retro-layer" aria-hidden="true">
+      <div class="shape-circle" role="presentation"></div>
+      <div class="shape-triangle" role="presentation"></div>
+      <div class="shape-grid" role="presentation"></div>
+      <div class="shape-pulse" role="presentation"></div>
+      <div class="shape-zig" role="presentation"></div>
+    </div>
 
-  <body>
-    <!-- Particle canvas -->
-    <div id="particles-js" aria-hidden="true"></div>
-
-    <!-- Header / Navbar -->
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark">
+    <!-- NAVBAR -->
+    <nav id="mainNav" class="navbar navbar-expand-lg sticky-top glass-nav">
       <div class="container">
-        <a class="navbar-brand" href="#">Pratik</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
-        </button>
-
+        <a class="navbar-brand nav-hover" href="#"><span>&lt;</span>Pratik<span>/&gt;</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fa fa-bars" style="color:var(--purple)"></i></span></button>
         <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item ms-3"><a class="btn btn-ghost btn-resume" href="Img/Pratik-Chinchore-Resume.pdf" download><i class="fa fa-download me-2"></i>Resume</a></li>
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link nav-link-animated" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-animated" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-animated" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-animated" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-animated" href="#contact">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
     <!-- HERO -->
-    <header id="home" class="hero section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left: Intro -->
+    <header class="hero">
+      <div class="container section-shell">
+        <div class="row align-items-center gy-4">
           <div class="col-lg-6">
-            <div class="intro" id="heroIntro">
-              <div class="eyebrow">Web Developer / Full-stack Developer</div>
-              <h1 class="hero-title">Hi — I'm <span>Pratik Chinchore</span></h1>
-              <p class="lead hero-desc">Results-driven Software Developer with over 3 years of experience specializing in designing and deploying dynamic web applications. Expertise spans both front-end and back-end development, adept at crafting intuitive user interfaces and scalable code solutions.</p>
-
-              <div class="typed-wrap">
-                <span id="typed-text" class="typed-text"></span>
-              </div>
-
+            <div class="intro" data-aos="fade-right">
+              <div class="title accent-tag">Web Developer · Full Stack</div>
+              <h1 class="name">Hi — I'm <span class="name-gradient">Pratik Chinchore</span></h1>
+              <p class="lead mt-3">Results-driven Software Developer with 3+ years of experience designing and deploying dynamic web applications. I build fast, responsive, and delightful user experiences with solid engineering behind the scenes.</p>
               <div class="mt-4 d-flex flex-wrap gap-3">
-                <a href="#projects" class="btn btn-primary btn-lg btn-glow">View Projects</a>
-                <a href="Img/Pratik-Chinchore-Resume.pdf" class="btn btn-outline btn-lg" download><i class="fa fa-download me-2"></i>Resume</a>
+                <a href="#projects" class="btn btn-primary btn-lg btn-glow"><i class="fa-solid fa-code me-2"></i>View Projects</a>
+                <a href="Img/Pratik-Chinchore-Resume.pdf" class="btn btn-success btn-lg btn-ghost" download><i class="fa fa-download me-2"></i>Resume</a>
+              </div>
+              <div class="hero-meta mt-4 d-flex flex-wrap gap-3">
+                <div class="meta-pill">
+                  <span class="dot"></span> Frontend &amp; Full-stack
+                </div>
+                <div class="meta-pill">
+                  <span class="dot"></span> React · Node · PHP · MySQL
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Right: Featured panel -->
-          <div class="col-lg-6 d-none d-lg-flex justify-content-center">
-            <div class="feature-card tilt" data-tilt data-tilt-max="8" id="featureCard">
-              <div class="feature-inner">
-                <h5 class="feature-title">Featured Work</h5>
-                <p class="muted text-center">Built responsive websites, survey forms, landing pages, and in-house tools with modern, user-focused design.</p>
-                <div class="mt-3 text-center">
-                  <a class="btn btn-outline btn-sm" href="#experience">Explore</a>
+          <div class="col-lg-6 d-none d-lg-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="hero-card-outer">
+              <div class="hero-card card-project">
+                <div class="hero-card-header d-flex justify-content-between align-items-center mb-3">
+                  <span class="accent-tag">Live Preview</span>
+                  <span class="hero-status-badge"><span class="pulse-dot"></span> Available for work</span>
                 </div>
+                <div class="hero-stats-grid">
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Experience</span>
+                    <span class="hero-stat-value">3+ yrs</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Projects</span>
+                    <span class="hero-stat-value">20+</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Stack</span>
+                    <span class="hero-stat-value">MERN · PHP</span>
+                  </div>
+                </div>
+                <p class="muted small mt-3 mb-0">Building interactive dashboards, landing pages, survey flows and internal tools that feel smooth and perform well in production.</p>
               </div>
-              <div class="accent-square" aria-hidden="true"></div>
+
+              <!-- floating badge -->
+              <div class="floating-badge">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Performance-first</span>
+              </div>
             </div>
           </div>
         </div>
@@ -89,149 +116,252 @@
     </header>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
+    <section id="about" class="py-5 section">
+      <div class="container section-shell">
         <div class="row align-items-center g-4">
+          <!-- Left Card: Profile -->
           <div class="col-lg-5" data-aos="fade-up">
-            <div class="card glass card-profile p-4 text-center">
-              <img src="Img/profile.jpeg" alt="profile" class="profile-img mb-3" width="120" height="120" loading="lazy" />
-              <h4 class="fw-bold mb-1 orbitron">Pratik Chinchore</h4>
-              <p class="muted mb-3">Frontend / Full-stack Developer</p>
-              <p class="muted small mb-3">Dynamic Web Developer specializing in React.js, Node.js, PHP, and Full Stack Development with hands-on experience in building responsive web applications, optimizing performance, and enhancing user engagement through innovative tools and features.</p>
-
-              <div class="d-flex justify-content-center gap-2">
-                <a class="btn btn-ghost btn-sm" href="#contact">Hire Me</a>
-                <a class="btn btn-primary btn-sm" href="#projects">See Work</a>
+            <div class="card p-4 card-project text-center shadow-sm border-0">
+              <div class="profile-avatar-wrap">
+                <span class="status-dot"></span>
+                <img src="Img/profile.jpeg" alt="profile" class="rounded-circle mb-3 mx-auto profile-avatar" width="120" height="120" loading="lazy" />
+              </div>
+              <h4 class="fw-bold mb-1" style="font-family:'Orbitron',sans-serif;">Pratik Chinchore</h4>
+              <p class="muted mb-2">Frontend / Full-stack Developer</p>
+              <p class="muted small mb-3">Dynamic Web Developer specializing in React.js, Node.js, PHP, and Full Stack Development. I focus on building responsive web apps, optimizing performance, and enhancing user engagement with clean, scalable code.</p>
+              <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <a class="btn btn-outline-retro btn-sm btn-glow-soft" href="#contact"><i class="fa-regular fa-paper-plane me-1"></i>Hire Me</a>
+                <a class="btn btn-primary btn-sm btn-glow" href="#projects"><i class="fa-solid fa-folder-open me-1"></i>See Work</a>
               </div>
             </div>
           </div>
 
+          <!-- Right Side: Skills and Tools -->
           <div class="col-lg-7" data-aos="fade-left">
             <div class="row g-4">
+              <!-- Skill Set -->
               <div class="col-12">
-                <div class="card glass p-4">
-                  <h6 class="orbitron accent-cyan">Skill Set</h6>
-                  <div class="d-flex flex-wrap gap-4 mt-3">
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="50" title="React JS" /><p class="small mt-1">React</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="50" title="Node.js" /><p class="small mt-1">Node.js</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="50" title="PHP" /><p class="small mt-1">PHP</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" title="JavaScript" /><p class="small mt-1">JavaScript</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="50" title="HTML5" /><p class="small mt-1">HTML5</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="50" title="CSS3" /><p class="small mt-1">CSS3</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="50" title="Bootstrap" /><p class="small mt-1">Bootstrap</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" width="50" title="jQuery" /><p class="small mt-1">jQuery</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter" width="50" title="CodeIgniter" /><p class="small mt-1">CodeIgniter</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="50" title="Laravel" /><p class="small mt-1">Laravel</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="50" title="MySQL" /><p class="small mt-1">MySQL</p></div>
+                <div class="card p-4 card-project shadow-sm border-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 style="font-family:'Orbitron',sans-serif; color:var(--cyan)">Skill Set</h6>
+                    <span class="tech-badge">Core Stack</span>
+                  </div>
+                  <div class="d-flex flex-wrap gap-4 mt-3 justify-content-start">
+                    <!-- React -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="40">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="50" title="React JS" />
+                      <p class="small mt-1">React</p>
+                    </div>
+
+                    <!-- Node.js -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="80">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="50" title="Node.js" />
+                      <p class="small mt-1">Node.js</p>
+                    </div>
+
+                    <!-- PHP -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="120">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="50" title="PHP" />
+                      <p class="small mt-1">PHP</p>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="160">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" title="JavaScript" />
+                      <p class="small mt-1">JavaScript</p>
+                    </div>
+
+                    <!-- HTML5 -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="200">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="50" title="HTML5" />
+                      <p class="small mt-1">HTML5</p>
+                    </div>
+
+                    <!-- CSS3 -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="240">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="50" title="CSS3" />
+                      <p class="small mt-1">CSS3</p>
+                    </div>
+
+                    <!-- Bootstrap -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="280">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="50" title="Bootstrap" />
+                      <p class="small mt-1">Bootstrap</p>
+                    </div>
+
+                    <!-- jQuery -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="320">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" width="50" title="jQuery" />
+                      <p class="small mt-1">jQuery</p>
+                    </div>
+
+                    <!-- CodeIgniter -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="360">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain-wordmark.svg" alt="CodeIgniter" width="50" title="CodeIgniter" />
+                      <p class="small mt-1">CodeIgniter</p>
+                    </div>
+
+                    <!-- Laravel -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="400">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" width="50" title="Laravel" />
+                      <p class="small mt-1">Laravel</p>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="text-center icon-skill" data-aos="zoom-in" data-aos-delay="440">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="50" title="MySQL" />
+                      <p class="small mt-1">MySQL</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
+              <!-- Tools I Use -->
               <div class="col-12">
-                <div class="card glass p-4">
-                  <h6 class="orbitron accent-magenta">Tools I Use</h6>
-                  <div class="d-flex flex-wrap gap-4 mt-3">
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="45" title="VS Code" /><p class="small mt-1">VSCode</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="45" title="Git" /><p class="small mt-1">Git</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="45" title="GitHub" /><p class="small mt-1">GitHub</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" width="45" title="npm" /><p class="small mt-1">npm</p></div>
-                    <div class="text-center icon-skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome DevTools" width="45" title="Chrome DevTools" /><p class="small mt-1">DevTools</p></div>
+                <div class="card p-4 card-project shadow-sm border-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 style="font-family:'Orbitron',sans-serif; color:var(--purple)">Tools I Use</h6>
+                    <span class="tech-badge">Workflow</span>
+                  </div>
+                  <div class="d-flex flex-wrap gap-4 mt-3 justify-content-start">
+                    <!-- VSCode -->
+                    <div class="text-center icon-skill">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="45" title="VS Code" />
+                      <p class="small mt-1">VSCode</p>
+                    </div>
+                    <!-- Git -->
+                    <div class="text-center icon-skill">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="45" title="Git" />
+                      <p class="small mt-1">Git</p>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="text-center icon-skill">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="45" title="GitHub" />
+                      <p class="small mt-1">GitHub</p>
+                    </div>
+                    <!-- npm -->
+                    <div class="text-center icon-skill">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" width="45" title="npm" />
+                      <p class="small mt-1">npm</p>
+                    </div>
+                    <!-- Chrome DevTools -->
+                    <div class="text-center icon-skill">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Chrome DevTools" width="45" title="Chrome DevTools" />
+                      <p class="small mt-1">DevTools</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div><!-- /container -->
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h3 class="orbitron accent-cyan">Work Experience</h3>
-        <div class="timeline mt-4">
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
-            <h5>Web Developer — On Direct Marketing Services LLP, Pune</h5>
-            <small class="muted">March 2023 — Present</small>
-            <p class="muted mb-2">Developed and maintained scalable full-stack web applications using React.js, Node.js, and MySQL. Collaborated with cross-functional teams to optimize UI and backend workflows.</p>
-            <ul class="muted small">
-              <li>Developed and maintained animated landing pages for enhanced user engagement.</li>
-              <li>Designed and implemented dynamic survey forms for data collection.</li>
-              <li>Created an email validator tool to ensure email accuracy.</li>
-              <li>Developed and managed an admin panel for streamlined tasks.</li>
-            </ul>
+    <section id="experience" class="py-5 section">
+      <div class="container position-relative">
+        <div class="section-shell">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <h3 data-aos="fade-up" style="font-family:'Orbitron',sans-serif; color:var(--cyan)">Work Experience</h3>
+            <span class="accent-chip" data-aos="fade-left"><i class="fa-solid fa-briefcase me-2"></i>3+ years in production</span>
           </div>
 
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            <h5>Software Developer — SRV Media Pvt.Ltd, Pune</h5>
-            <small class="muted">Feb 2022 — Nov 2022</small>
-            <p class="muted mb-2">Worked on dynamic web interfaces using PHP, Bootstrap. Enhanced website accessibility and responsiveness across devices.</p>
-            <ul class="muted small">
-              <li>Integrated Google Captcha for enhanced form security.</li>
-              <li>Configured SMTP for reliable email sending.</li>
-              <li>Developed responsive web pages using Bootstrap.</li>
-              <li>Implemented form validation for data integrity.</li>
-              <li>Improved website SEO with on-page techniques.</li>
-            </ul>
+          <div class="timeline mt-3">
+            <!-- Experience 1 -->
+            <div class="timeline-item hover-lift" >
+              <h5>Web Developer — On Direct Marketing Services LLP, Pune</h5>
+              <small class="muted badge-timeline">March 2023 — Present</small>
+              <p class="muted mb-2">Developed and maintained scalable full-stack web apps using React.js, Node.js, and MySQL. Collaborated with cross-functional teams to optimize UI and backend workflows.</p>
+              <ul class="muted small bullet-soft">
+                <li>Developed and maintained animated landing pages for enhanced user engagement.</li>
+                <li>Designed and implemented dynamic survey forms for data collection.</li>
+                <li>Created an email validator tool to ensure email accuracy.</li>
+                <li>Developed and managed an admin panel for streamlined tasks.</li>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item hover-lift" >
+              <h5>Software Developer — SRV Media Pvt.Ltd, Pune</h5>
+              <small class="muted badge-timeline">Feb 2022 — Nov 2022</small>
+              <p class="muted mb-2">Worked on dynamic web interfaces using PHP &amp; Bootstrap. Improved accessibility and responsiveness for high-traffic websites.</p>
+              <ul class="muted small bullet-soft">
+                <li>Integrated Google Captcha for enhanced form security.</li>
+                <li>Configured SMTP for reliable transactional emails.</li>
+                <li>Developed responsive pages using Bootstrap.</li>
+                <li>Implemented robust form validation and improved SEO with on-page techniques.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h3 class="orbitron accent-magenta">Selected Projects</h3>
-          <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
-            <button class="btn btn-category active" data-category="websites">Websites</button>
-            <button class="btn btn-category" data-category="landing">Landing Pages</button>
-            <button class="btn btn-category" data-category="survey">Survey Forms</button>
-            <button class="btn btn-category" data-category="tools">In-house Tools</button>
+    <section id="projects" class="py-5 section">
+      <div class="container section-shell">
+        <!-- Section Header -->
+        <div class="text-center mb-4 position-relative">
+          <!-- Lottie Accent -->
+          <div id="projects-lottie" style="width:80px;height:80px;margin:0 auto 0.5rem;"></div>
+
+          <h3 data-aos="fade-up" style="font-family:'Orbitron',sans-serif; color:var(--purple)" class="d-inline-block position-relative">
+            Selected Projects
+            <span class="underline-accent"></span>
+          </h3>
+          <p class="muted small" data-aos="fade-up" data-aos-delay="70">A mix of landing pages, survey workflows, internal tools and production websites.</p>
+
+          <!-- Category Buttons -->
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-3" data-aos="fade-up" data-aos-delay="100">
+            <button class="btn btn-category active" data-category="websites"><i class="fa-solid fa-earth-asia me-1"></i>Websites</button>
+            <button class="btn btn-category" data-category="landing"><i class="fa-solid fa-bullhorn me-1"></i>Landing Pages</button>
+            <button class="btn btn-category" data-category="survey"><i class="fa-solid fa-list-check me-1"></i>Survey Forms</button>
+            <button class="btn btn-category" data-category="tools"><i class="fa-solid fa-wrench me-1"></i>In-house Tools</button>
           </div>
         </div>
 
-        <div id="projects-carousel" class="position-relative">
-          <!-- Websites -->
-          <div class="project-carousel" id="carousel-websites">
+        <!-- Projects Wrapper -->
+        <div id="projects-carousel" class="position-relative" data-aos="fade-up" data-aos-delay="150">
+          <!-- Glow background -->
+          <div class="projects-glow"></div>
+
+          <!-- Websites Carousel -->
+          <div class="project-carousel active" id="carousel-websites">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Website 1" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://www.europalocks.com/assets/images/mega_menu/nexen.png" alt="Website 1" />
+                    </div>
                     <div class="project-content">
-                      <h5>Corporate Website</h5>
-                      <p>Responsive business website with CMS integration and SEO optimization.</p>
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-code"></i> Code Ignitor • PHP • MySQL</span>
+                      </div>
+                      <h5>Europalocks</h5>
+                      <p>Responsive E-Commerce Website with CMS and SEO optimization.</p>
+                      <div class="project-links">
+                        <a href="https://www.europalocks.com/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Website 2" />
-                    <div class="project-content">
-                      <h5>Portfolio Website</h5>
-                      <p>Modern personal portfolio with smooth animations and theme switcher.</p>
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://sibm.edu/assets/images/About-Us-Image1.webp" alt="Website 2" />
                     </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Website 3" />
                     <div class="project-content">
-                      <h5>Startup Website</h5>
-                      <p>Clean one-page site for a startup with testimonials and call-to-action.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Website 4" />
-                    <div class="project-content">
-                      <h5>Agency Website</h5>
-                      <p>Creative site for a digital agency with video background and animations.</p>
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-palette"></i> Code Ignitor • Bootstrap</span>
+                      </div>
+                      <h5>Symbiosis Institute of Business Management</h5>
+                      <p>Responsive educational website with SEO optimization and webpages using bootstrap.</p>
+                      <div class="project-links">
+                        <a href="https://sibm.edu/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -240,26 +370,97 @@
             </div>
           </div>
 
-          <!-- Landing -->
+          <!-- Landing Pages Carousel -->
           <div class="project-carousel d-none" id="carousel-landing">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Landing 1" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://pratikchinchore.github.io/Archit-Abacus/static/media/archit-logo.893eb8be9db2d7d8370f.png" alt="Archit Magic Maths" />
+                    </div>
                     <div class="project-content">
-                      <h5>Product Launch Page</h5>
-                      <p>High-conversion landing page for a SaaS product with CTA and video hero.</p>
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-bullhorn"></i> Landing Page</span>
+                      </div>
+                      <h5>Archit Magic Maths</h5>
+                      <p>Landing page with hero, about, features and contact sections.</p>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Archit-Abacus" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Landing 2" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://unrivaled-cactus-44396c.netlify.app/images/res_img_6.jpeg" alt="Archit Abacus LP" />
+                    </div>
                     <div class="project-content">
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Animated LP</span>
+                      </div>
+                      <h5>Archit Abacus</h5>
+                      <p>Animated landing page built with modern layout and motion.</p>
+                      <div class="project-links">
+                        <a href="https://unrivaled-cactus-44396c.netlify.app" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://resources.itcontentbox.com/whitepaper/Phantom-ETC-DA-Right-At-School-75653-1.png" alt="Event Registration" />
+                    </div>
+                    <div class="project-content">
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-clapperboard"></i> GSAP</span>
+                      </div>
                       <h5>Event Registration</h5>
-                      <p>Landing page for a tech conference with countdown and registration form.</p>
+                      <p>Landing page with GSAP scroll animations and registration form.</p>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Landing-page/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://www.gep.com/prod/s3fs-public/images/research-report/latest/how-far-will-ai-agents-go-D.jpg" alt="Event Registration" />
+                    </div>
+                    <div class="project-content">
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-clapperboard"></i> Bootstrap</span>
+                      </div>
+                      <h5>Event Registration</h5>
+                      <p>Landing page with bootstrap sections and animation with registration form.</p>
+                      <div class="project-links">
+                        <a href="https://resource.ciofirst.com/whitepaper/GEP-MQL/GEP-Live-Event-MQLs-p-1-landing.html" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <video src="https://resource.nexttechtoday.com/whitepapers/GenSummitBroll.mp4" class="project-video" autoplay muted loop playsinline></video>
+                    </div>
+
+                    <div class="project-content">
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-clapperboard"></i> Boostrap</span>
+                      </div>
+                      <h5>Event Registration</h5>
+                      <p>Landing page with Multiple sections Using bootstrap and registration form.</p>
+                      <div class="project-links">
+                        <a href="https://resource.nexttechtoday.com/whitepapers/LP-CIO-Insight-Summit-landing.html" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -268,26 +469,62 @@
             </div>
           </div>
 
-          <!-- Survey -->
+          <!-- Survey Forms Carousel -->
           <div class="project-carousel d-none" id="carousel-survey">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Survey 1" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIkHAlLKznc8zCrpGeyKfZitBSrMpZ0ikoYQ&s" alt="Customer Feedback" />
+                    </div>
                     <div class="project-content">
-                      <h5>Customer Feedback</h5>
-                      <p>Dynamic survey form with conditional logic and analytics dashboard.</p>
+                      <h5>Exit Employee Feedback</h5>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Survey/Exit-Survey/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Survey 2" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDLtB88VJ2fv_8bi3-YXV4u3wDTvB9erJlYBw3ryv6EMW7NmiRc3JRQko&s" alt="Employee Engagement" />
+                    </div>
                     <div class="project-content">
-                      <h5>Employee Engagement</h5>
-                      <p>Multi-step form with smooth transitions and summary insights.</p>
+                      <h5>Internal Joining Process</h5>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Survey/IJP-PKT/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLQjCPQbReDxDGE91kRNpaYsLdGJwU8xra7cP7-gZVRS2uQ9JWaKVyiM_NC3jEbVLniw&usqp=CAU" alt="Employee Engagement" />
+                    </div>
+                    <div class="project-content">
+                      <h5>Internal Joining Process</h5>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Survey/IJP-PKT2/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://poll-maker.com/images/7b522e2d-bf69-4723-17cb-2e606eabae00/public" alt="Employee Engagement" />
+                    </div>
+                    <div class="project-content">
+                      <h5>Company Canteen — Food Survey</h5>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Survey/Food-survey/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -296,26 +533,43 @@
             </div>
           </div>
 
-          <!-- Tools -->
+          <!-- In-house Tools Carousel -->
           <div class="project-carousel d-none" id="carousel-tools">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Tool 1" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="data:image/png;base64,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"
+                        alt="Task Tracker" />
+                    </div>
                     <div class="project-content">
-                      <h5>Task Tracker</h5>
-                      <p>Internal productivity tracker with live updates and notifications.</p>
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-list-check"></i> Internal Tool</span>
+                      </div>
+                      <h5>Developer Utility Tools</h5>
+                      <p>Internal Developer Utility Tools.</p>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Developer-Utility-Tools/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="project-card tilt" data-tilt data-tilt-max="6">
-                    <img src="https://via.placeholder.com/400x250" alt="Tool 2" />
+                  <div class="project-card hover-lift-strong">
+                    <div class="project-img-wrap">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQC-uH5dKvy4-L0k7b_dphxMDV78nJS8prRQ&s" alt="Resource Manager" />
+                    </div>
                     <div class="project-content">
-                      <h5>Resource Manager</h5>
-                      <p>Tool for tracking team utilization and managing internal projects.</p>
+                      <div class="project-meta">
+                        <span class="project-pill"><i class="fa-solid fa-diagram-project"></i> Email Validator</span>
+                      </div>
+                      <h5>Email Validator</h5>
+                      <p>Tool for Validate a invalid Emails and removed duplicate Emails.</p>
+                      <div class="project-links">
+                        <a href="https://pratikchinchore.github.io/Email_validator/" target="_blank" class="btn-link-live"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Live Demo</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -328,33 +582,35 @@
     </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="row mt-4">
+    <section id="education" class="py-5 section">
+      <div class="container section-shell">
+        <div class="row mt-4 gy-4">
+          <!-- Education Timeline -->
           <div class="col-lg-7">
-            <h3 class="orbitron accent-coral">Education</h3>
-            <div class="timeline">
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+            <h3 data-aos="fade-up" style="font-family:'Orbitron',sans-serif; color:var(--coral)">Education</h3>
+            <div class="timeline mt-3">
+              <div class="timeline-item hover-lift" data-aos="fade-up" data-aos-delay="50">
                 <h6>Master of Computer Application (MCA)</h6>
-                <small class="muted">2020 — 2022</small>
-                <p class="muted">Modern College Shivaji Nagar (Autonomous), Pune</p>
+                <small class="muted badge-timeline">2020 — 2022</small>
+                <p class="muted mb-0">Modern College Shivaji Nagar (Autonomous), Pune</p>
               </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-item hover-lift" data-aos="fade-up" data-aos-delay="100">
                 <h6>Bachelor of Computer Science (BCS)</h6>
-                <small class="muted">2017 — 2020</small>
-                <p class="muted">KTHM College, Nashik</p>
+                <small class="muted badge-timeline">2017 — 2020</small>
+                <p class="muted mb-0">KTHM College, Nashik</p>
               </div>
             </div>
           </div>
 
+          <!-- Certifications Timeline -->
           <div class="col-lg-5" data-aos="fade-left">
-            <h3 class="orbitron accent-coral">Certifications</h3>
+            <h3 data-aos="fade-up" style="font-family:'Orbitron',sans-serif; color:var(--coral)">Certifications</h3>
             <div class="timeline mt-4">
-              <div class="timeline-item" data-aos="fade-left" data-aos-delay="50">
+              <div class="timeline-item hover-lift" data-aos="fade-left" data-aos-delay="50">
                 <h6>MERN Stack Development</h6>
                 <small class="muted">Issued by: Seven Mentor Pvt Ltd</small>
               </div>
-              <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+              <div class="timeline-item hover-lift" data-aos="fade-left" data-aos-delay="100">
                 <h6>React Js Certification</h6>
                 <small class="muted">Issued by: Dot Net Tricks</small>
               </div>
@@ -365,19 +621,38 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-            <h3 class="orbitron accent-magenta">Let's build something</h3>
-            <p class="muted">Feel free to reach out for collaborations, freelance work, or just to say hi.</p>
-            <div class="mt-3">
-              <p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:pratikc29499@gmail.com">pratikc29499@gmail.com</a></p>
-              <p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 7507160134</p>
+    <section id="contact" class="py-5 section">
+      <div class="container section-shell">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7" data-aos="fade-right">
+            <h3 style="font-family:'Orbitron',sans-serif; color:var(--purple)">Let's build something</h3>
+            <p class="muted">Open to full-time roles, freelance projects, and collaborations. Drop a message and I'll get back to you.</p>
+            <div class="mt-3 contact-card">
               <p>
-                <a href="https://github.com/pratikchinchore" class="me-2"><i class="fa-brands fa-github fa-lg"></i></a>
-                <a href="https://www.linkedin.com/in/pratik-chinchore-73142a215/" class="me-2"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                <i class="fa fa-envelope me-2"></i>
+                <strong>Email:</strong>
+                <a href="mailto:pratikc29499@gmail.com">pratikc29499@gmail.com</a>
               </p>
+              <p>
+                <i class="fa fa-phone me-2"></i>
+                <strong>Phone:</strong> +91 7507160134
+              </p>
+              <p class="mb-0">
+                <a href="https://github.com/pratikchinchore" class="me-3 social-link"><i class="fa-brands fa-github fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/pratik-chinchore-73142a215/" class="me-3 social-link"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+            <div class="contact-highlight card-project p-4">
+              <h6 class="accent-tag mb-2">Why work with me?</h6>
+              <ul class="muted small bullet-soft mb-0">
+                <li>Clean, maintainable code with attention to details.</li>
+                <li>Strong understanding of UX, performance and accessibility.</li>
+                <li>Comfortable owning features end-to-end, frontend to backend.</li>
+                <li>Experience building real campaigns and internal tools in production.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -385,38 +660,94 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div>© <span id="year"></span> Pratik Chinchore</div>
-        <div class="socials">
-          <a href="https://github.com/pratikchinchore" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/pratik-chinchore-73142a215/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <footer>
+      <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div>
+          © <span id="year"></span> Pratik Chinchore
         </div>
       </div>
     </footer>
 
-    <!-- Libraries -->
+    <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-    <!-- Typed.js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
-
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <!-- VanillaTilt -->
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-
-    <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Main JS -->
+    <script>
+      // Category toggle logic + Swiper init
+      const initSwipers = () => {
+        document.querySelectorAll('.mySwiper').forEach((swiperEl) => {
+          const slides = swiperEl.querySelectorAll('.swiper-slide')
+          const slideCount = slides.length
+      
+          if (slideCount <= 3) {
+            swiperEl.classList.add('no-scroll')
+            const pag = swiperEl.querySelector('.swiper-pagination')
+            if (pag) pag.style.display = 'none'
+          }
+      
+          new Swiper(swiperEl, {
+            slidesPerView: slideCount <= 3 ? slideCount : 1,
+            spaceBetween: 20,
+            pagination: {
+              el: swiperEl.querySelector('.swiper-pagination'),
+              clickable: true
+            },
+            breakpoints: {
+              768: { slidesPerView: slideCount <= 3 ? slideCount : 2 },
+              992: { slidesPerView: slideCount <= 3 ? slideCount : 3 }
+            },
+            allowTouchMove: slideCount > 3,
+            loop: slideCount > 3,
+            autoplay: slideCount > 3 ? { delay: 3500, disableOnInteraction: false } : false,
+            speed: 800
+          })
+        })
+      }
+      
+      initSwipers()
+      
+      document.querySelectorAll('.btn-category').forEach((btn) => {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.btn-category').forEach((b) => b.classList.remove('active'))
+          this.classList.add('active')
+      
+          document.querySelectorAll('.project-carousel').forEach((c) => c.classList.add('d-none'))
+          const category = this.getAttribute('data-category')
+          const target = document.getElementById(`carousel-${category}`)
+          target.classList.remove('d-none')
+        })
+      })
+    </script>
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script src="script.js" defer></script>
+
+    <script>
+      // Lazy load hook (if you use .lazy-img later)
+      document.addEventListener('DOMContentLoaded', function () {
+        const lazyImages = document.querySelectorAll('.lazy-img')
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target
+                img.src = img.dataset.src
+                img.removeAttribute('data-src')
+                obs.unobserve(img)
+              }
+            })
+          },
+          { rootMargin: '50px' }
+        )
+        lazyImages.forEach((img) => observer.observe(img))
+      })
+    </script>
   </body>
 </html>

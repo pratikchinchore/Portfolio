@@ -1,208 +1,28 @@
-/* Enhanced interaction JS
-   - GSAP hero intro
-   - Typed.js
-   - particles.js
-   - AOS
-   - Swiper + responsive logic
-   - VanillaTilt
-   - Nav collapse + current section highlight
-   - Lazy loading & year stamp
-*/
+// Init AOS + interactions
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 900,
+    easing: 'ease-out-quart',
+    once: true,
+    offset: 80,
+  });
 
-document.addEventListener('DOMContentLoaded', () => {
-  /* -------------------------
-     1) AOS
-  ------------------------- */
-  if (window.AOS) {
-    AOS.init({ duration: 750, once: true, offset: 120, easing: 'ease-out-cubic' });
-  }
-
-  /* -------------------------
-     2) Year in footer
-  ------------------------- */
+  // Year
   const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* -------------------------
-     3) Particles
-  ------------------------- */
-  if (window.particlesJS) {
-    try {
-      particlesJS('particles-js', {
-        particles: {
-          number: { value: 60, density: { enable: true, value_area: 800 } },
-          color: { value: ['#00f0ff', '#ff49ff'] },
-          shape: { type: 'circle' },
-          opacity: { value: 0.11, random: true },
-          size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 130, color: '#00f0ff', opacity: 0.03, width: 1 },
-          move: { enable: true, speed: 1, random: true, out_mode: 'out' }
-        },
-        interactivity: {
-          detect_on: 'canvas',
-          events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: false } },
-          modes: { grab: { distance: 150, line_linked: { opacity: 0.12 } } }
-        },
-        retina_detect: true
-      });
-    } catch (err) {
-      console.warn('particles init error', err);
-    }
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 
-  /* -------------------------
-     4) Typed.js (hero)
-  ------------------------- */
-  if (window.Typed) {
-    new Typed('#typed-text', {
-      strings: [
-        'Results-driven Software Developer • Frontend & Backend',
-        'React.js · Node.js · PHP · MySQL',
-        'I build responsive web apps & in-house tools'
-      ],
-      typeSpeed: 44,
-      backSpeed: 28,
-      backDelay: 1600,
-      startDelay: 300,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|'
+  // Smooth nav link collapsing (Bootstrap)
+  if (window.$) {
+    $('a.nav-link').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
     });
   }
 
-  /* -------------------------
-     5) GSAP hero intro
-  ------------------------- */
-  if (window.gsap) {
-    try {
-      const tl = gsap.timeline();
-      tl.from('#mainNav', { y: -24, opacity: 0, duration: 0.7, ease: 'power3.out' });
-      tl.from('.eyebrow', { y: 18, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3');
-      tl.from('.hero-title', { y: 28, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.45');
-      tl.from('.hero-desc', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.5');
-      tl.from('.typed-wrap', { opacity: 0, y: 8, duration: 0.45 }, '-=0.35');
-      tl.from('.btn-glow', { scale: 0.96, opacity: 0, duration: 0.55 }, '-=0.35');
-      // subtle floating on feature card
-      gsap.to('#featureCard', { y: -10, duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.6 });
-    } catch (e) {
-      console.warn('gsap error', e);
-    }
-  }
-
-  /* -------------------------
-     6) Swiper initialization
-  ------------------------- */
-  const initSwipers = () => {
-    document.querySelectorAll('.mySwiper').forEach((el) => {
-      const slides = el.querySelectorAll('.swiper-slide').length;
-      const pagination = el.parentElement.querySelector('.swiper-pagination');
-
-      if (pagination) pagination.style.display = slides <= 3 ? 'none' : '';
-
-      new Swiper(el, {
-        slidesPerView: slides <= 3 ? Math.min(slides, 3) : 1,
-        spaceBetween: 18,
-        pagination: { el: pagination, clickable: true },
-        breakpoints: {
-          768: { slidesPerView: slides <= 3 ? Math.min(slides, 3) : 2 },
-          992: { slidesPerView: slides <= 3 ? Math.min(slides, 3) : 3 }
-        },
-        loop: slides > 3,
-        autoplay: slides > 3 ? { delay: 3200, disableOnInteraction: false } : false,
-        speed: 800,
-        grabCursor: true
-      });
-    });
-  };
-  initSwipers();
-
-  /* -------------------------
-     7) Category / project carousel toggles
-  ------------------------- */
-  document.querySelectorAll('.btn-category').forEach(btn => {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.btn-category').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-
-      document.querySelectorAll('.project-carousel').forEach(c => c.classList.add('d-none'));
-      const category = this.getAttribute('data-category');
-      const target = document.getElementById(`carousel-${category}`);
-      if (target) {
-        target.classList.remove('d-none');
-        // reinit swipers slightly after visibility
-        setTimeout(() => initSwipers(), 80);
-      }
-    });
-  });
-
-  /* -------------------------
-     8) VanillaTilt for .tilt elements
-  ------------------------- */
-  if (window.VanillaTilt) {
-    VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-      max: 8, speed: 450, glare: true, 'max-glare': 0.12
-    });
-  }
-
-  /* -------------------------
-     9) Mobile nav auto-collapse
-  ------------------------- */
-  document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      const nav = document.querySelector('.navbar-collapse');
-      if (nav && nav.classList.contains('show')) {
-        const bsCollapse = bootstrap.Collapse.getInstance(nav) || new bootstrap.Collapse(nav, { toggle: false });
-        bsCollapse.hide();
-      }
-    });
-  });
-
-  /* -------------------------
-     10) Lazy image swap (IntersectionObserver)
-  ------------------------- */
-  const lazyImgs = document.querySelectorAll('img[loading="lazy"], img.lazy-img');
-  if ('IntersectionObserver' in window && lazyImgs.length) {
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const img = e.target;
-          if (img.dataset && img.dataset.src) {
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-          }
-          obs.unobserve(img);
-        }
-      });
-    }, { rootMargin: '150px' });
-
-    lazyImgs.forEach(img => io.observe(img));
-  }
-
-  /* -------------------------
-     11) Section highlight (light-weight scroll spy)
-  ------------------------- */
-  const sections = document.querySelectorAll('section[id], header#home');
-  const navLinks = document.querySelectorAll('.navbar .nav-link');
-  if ('IntersectionObserver' in window && sections.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = document.querySelector(`.navbar .nav-link[href="#${id}"]`);
-        if (link) {
-          if (entry.isIntersecting) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-          }
-        }
-      });
-    }, { threshold: 0.45 });
-    sections.forEach(s => observer.observe(s));
-  }
-
-  /* -------------------------
-     12) Fallback micro-interaction for project-cards (if tilt unavailable)
-  ------------------------- */
-  document.querySelectorAll('.project-card').forEach(card => {
+  // Tilt effect on cards
+  const tiltSelector = '.card-project, .project-card';
+  document.querySelectorAll(tiltSelector).forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -211,19 +31,234 @@ document.addEventListener('DOMContentLoaded', () => {
       const cy = rect.height / 2;
       const dx = (x - cx) / cx;
       const dy = (y - cy) / cy;
-      card.style.transform = `perspective(800px) rotateX(${(-dy * 4).toFixed(2)}deg) rotateY(${(dx * 6).toFixed(2)}deg) translateY(-6px)`;
+      card.style.transform =
+        'perspective(900px) rotateX(' +
+        -dy * 4 +
+        'deg) rotateY(' +
+        dx * 6 +
+        'deg) translateY(-6px)';
     });
+
     card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
+      card.style.transform = 'translateY(0)';
     });
   });
 
-  /* -------------------------
-     13) Respect reduced motion
-  ------------------------- */
+  // Magnetic hover for nav links & buttons
+  const magneticTargets = document.querySelectorAll(
+    '.nav-link-animated, .btn-glow, .btn-glow-soft'
+  );
+  magneticTargets.forEach((el) => {
+    const strength = 18;
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      el.style.transform = `translate(${x / strength}px, ${y / strength}px)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0,0)';
+    });
+  });
+
+  // Respect reduced motion
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const el = document.getElementById('particles-js');
-    if (el) el.style.display = 'none';
+    document.querySelectorAll('.retro-layer > div').forEach((el) => (el.style.animation = 'none'));
+    document
+      .querySelectorAll('.card-project, .project-card, .btn-primary, .btn-outline-retro')
+      .forEach((el) => (el.style.transition = 'none'));
+  }
+});
+
+// === GSAP + ScrollTrigger ===
+if (window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // PROJECTS section
+  const projectsSection = document.querySelector('#projects');
+  if (projectsSection) {
+    gsap.from('#projects h3', {
+      scrollTrigger: {
+        trigger: projectsSection,
+        start: 'top 80%',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+
+    gsap.from('#projects .btn-category', {
+      scrollTrigger: {
+        trigger: projectsSection,
+        start: 'top 78%',
+      },
+      y: 20,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.08
+    });
+
+    gsap.from('#projects .swiper-slide', {
+      scrollTrigger: {
+        trigger: '#projects-carousel',
+        start: 'top 75%',
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out',
+      stagger: 0.06
+    });
   }
 
-}); // DOMContentLoaded end
+  // ABOUT section (staggered content + skills)
+  const aboutSection = document.querySelector('#about');
+  if (aboutSection) {
+    gsap.from('#about .about-heading', {
+      scrollTrigger: {
+        trigger: aboutSection,
+        start: 'top 80%',
+      },
+      y: 35,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out'
+    });
+
+    gsap.from('#about .about-text', {
+      scrollTrigger: {
+        trigger: aboutSection,
+        start: 'top 78%',
+      },
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.08
+    });
+
+    gsap.from('#about .skill-symbol', {
+      scrollTrigger: {
+        trigger: aboutSection,
+        start: 'top 75%',
+      },
+      y: 25,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'back.out(1.7)',
+      stagger: 0.06
+    });
+  }
+
+  // EXPERIENCE section
+  const experienceSection = document.querySelector('#experience');
+  if (experienceSection) {
+    gsap.from('#experience .experience-heading', {
+      scrollTrigger: {
+        trigger: experienceSection,
+        start: 'top 80%',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out'
+    });
+
+    gsap.from('#experience .timeline-item', {
+      scrollTrigger: {
+        trigger: experienceSection,
+        start: 'top 78%',
+      },
+      x: -40,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.12
+    });
+
+    // floating badges or counters if you add them
+    gsap.from('#experience .xp-stat-pill', {
+      scrollTrigger: {
+        trigger: experienceSection,
+        start: 'top 70%',
+      },
+      y: 20,
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.1
+    });
+  }
+
+  // Global background floating elements (reusable)
+  const bgFloaters = document.querySelectorAll('.bg-orbit, .bg-pill, .bg-dot-ring');
+  if (bgFloaters.length) {
+    bgFloaters.forEach((el, index) => {
+      gsap.to(el, {
+        y: 12,
+        x: index % 2 === 0 ? 8 : -8,
+        duration: 4 + index,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+    });
+  }
+}
+
+// === Lottie for Projects section icon ===
+document.addEventListener('DOMContentLoaded', function () {
+  const lottieContainer = document.getElementById('projects-lottie');
+  if (lottieContainer && window.lottie) {
+    lottie.loadAnimation({
+      container: lottieContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      // you can replace URL with your own JSON if you have
+      path: 'https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json'
+    });
+  }
+
+  // Extra hover animation using GSAP for project cards
+  if (window.gsap) {
+    document.querySelectorAll('.project-card').forEach((card) => {
+      const img = card.querySelector('.project-img-wrap img');
+
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          duration: 0.3,
+          y: -8,
+          boxShadow: '0 20px 45px rgba(0,0,0,0.18)',
+          ease: 'power3.out'
+        });
+        if (img) {
+          gsap.to(img, {
+            duration: 0.4,
+            scale: 1.05,
+            ease: 'power3.out'
+          });
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          duration: 0.3,
+          y: 0,
+          boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+          ease: 'power3.out'
+        });
+        if (img) {
+          gsap.to(img, {
+            duration: 0.4,
+            scale: 1,
+            ease: 'power3.out'
+          });
+        }
+      });
+    });
+  }
+});
